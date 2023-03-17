@@ -14,7 +14,7 @@ const data = {
            }
          ],
          "successMessage": "Richtig!",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Geht den schmalen Weg zur Straße Auf der Gans. Den nächsten Hinweis findet ihr an der Telefonzelle"
        }
      },
      "Merkur": {
@@ -31,7 +31,7 @@ const data = {
            }
          ],
          "successMessage": "Merkur dreht sich nur sehr langsam um sich selbst, die Seite die zur Sonne zeigt ist extrem heiß, die andere extrem kalt",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Geht bei auf der Gans nach rechts weiter bis zum Ende. Dort findet ihr den nächsten Hinweis"
        }
      },
      "Venus": {
@@ -48,7 +48,7 @@ const data = {
            }
          ],
          "successMessage": "Je nach Jahreszeit ist Venus von der Erde aus morgens oder abends sehr hell sichtbar. Seefahrer früher wußten nicht, dass es der gleiche Himmelskörper ist.",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Geht nach rechts auf den Akeleiweg. Dort ist der nächste Hinweis"
        }
      },
      "Erde": {
@@ -65,7 +65,7 @@ const data = {
            }
          ],
          "successMessage": "Die Erde hat einen, der Mars zwei, Jupiter und Saturn sogar je über sechzig! Nur Merkur und Venus müssen ohne Monde auskommen, alle anderen Planeten haben mindestens einen Mond.",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Geht nach links auf den Fuchsienweg und findet den nächsten Hinweis"
        }
      },
      "Mars": {
@@ -82,7 +82,7 @@ const data = {
             }
          ],
          "successMessage": "Olympus Mons ist der höchste Berg auf dem Mars. Er ist ungefähr zweieinhalb Mal so groß wie der Mount Everest",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Geht weiter auf dem Fuchsienweg bis ihr an den Rosmarinweg kommt. Dort kommt der nächste Hinweis"
        }
      },
      "Jupiter": {
@@ -99,7 +99,7 @@ const data = {
             }
          ],
          "successMessage": "Der Große Rote Fleck ist ein riesiger Sturm auf Jupiter, der seit mindestens 350 Jahren wütet.",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Vom Fuchsienweg aus müsst ihr nach links auf dem Rosmarinweg. Kurz bevor die Straße zu Ende ist kommt ein kleiner Weg zwischen den Häuser nach rechts. Dort findet ihr einen Hinweis"
        }
      },
      "Saturn": {
@@ -116,24 +116,24 @@ const data = {
            }
          ],
          "successMessage": "Die Ringe des Saturn bestehen aus unzähligen kleinen Eis- und Gesteinspartikeln, die durch die Schwerkraft in eine Umlaufbahn um den Planeten gezogen wurden.",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Geht den Weg bis zum Ende. An der Ecke zu In den Ringelgärten kommt der nächste Hinweis"
        }
      },
      "Uranus": {
        "card": {
-         "question": "Was ist ungewöhnlich an der Neigung von Uranus?",
+         "question": "Warum sieht Uranus türkis aus?",
          "answers": [{
-           "Er steht auf dem Kopf": "false"
+           "Seine Oberfläche besteht aus Wasser": "false"
            },
            {
-           "Er ist sehr stark zur Seite geneigt": "true"
+           "Wegen dem Methangas in der Atmosphäre": "true"
            },
            {
-           "Gar nichts": "false"
+           "Auf seinen Felsen wächst Moos": "false"
            }
          ],
-         "successMessage": "Uranus ist auf die Seite geneigt, daher sieht es aus als würde sein Ring von oben nach unten gehen. Tatsächlich ist aber der ganze Planet gedreht",
-         "nextTargetHint": "Your next target is at...."
+         "successMessage": "Die blaue Farbe bei Neptun und Uranus kommt von dem Methan in der Atmosphäre der beiden Planeten. Methan verschluckt den roten Anteil des Lichts, so dass der Planet blau erscheint.",
+         "nextTargetHint": "Biegt nach rechts ab. der nächste Hinweis kommt am Begonienweg"
        }
      },
      "Neptun": {
@@ -150,7 +150,7 @@ const data = {
            }
          ],
          "successMessage": "Er ist nach dem römischen Gott des Meeres benannt. Neptun gehört zu Gruppe der Eisriesen. Sein Kern ist umgeben von einem Mantel oder Ozean aus einer Mischung von Fels, Wasser, Ammoniak und Methan",
-         "nextTargetHint": "Your next target is at...."
+         "nextTargetHint": "Geht nach rechts auf den Begonienweg. Der nächste Hinweis kommt am Krokusweg"
        }
      },
      "Pluto": {
@@ -166,8 +166,8 @@ const data = {
            "Er war früher einer": "true"
            }
          ],
-         "successMessage": "Pluto zählte bis 2006 zu den Planeten unseres Sonnensystems. Seither zählt er zu den neu entdeckten (und ähnlich kleinen) Zwergplaneten, und unser Sonnensystem hat nur noch 8 Planeten. Ansonsten müssten wir uns inzwischen schon über 12 Planeten merken",
-         "nextTargetHint": "Your next target is at...."
+         "successMessage": "Pluto zählte bis 2006 zu den Planeten. Seither gehört er zu den neu entdeckten (und ähnlich kleinen) Zwergplaneten, und unser Sonnensystem hat nur noch 8 Planeten. Sonst müssten wir uns inzwischen schon über 12 Planeten merken",
+         "nextTargetHint": "Geschafft! Ihr habt alle Fragen beantwortet. Der Schatz ist am Spielplatz am Krokusweg"
        }
      },
    }
