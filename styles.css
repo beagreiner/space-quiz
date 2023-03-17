@@ -224,6 +224,7 @@ strong {
   width: 100%;
   position: relative;
   counter-increment: answers;
+  padding: 0 2rem;
 }
 .modal-body.questions .btn::before {
   content: counter(answers, upper-alpha);
