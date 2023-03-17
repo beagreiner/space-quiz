@@ -123,17 +123,16 @@ const data = {
        "card": {
          "question": "Was ist ungewöhnlich an der Neigung von Uranus?",
          "answers": [{
-           "Er steht auf dem Kopf": "false"
+           "Seine Oberfläche besteht aus Wasser": "false"
            },
            {
-           "Er ist sehr stark zur Seite geneigt": "true"
+           "Wegen dem Methangas in der Atmosphäre": "true"
            },
            {
-           "Gar nichts": "false"
+           "Auf seinen Felsen wächst Moos": "false"
            }
          ],
-         "successMessage": "Uranus ist auf die Seite geneigt, daher sieht es aus als würde sein Ring von oben nach unten gehen. Tatsächlich ist aber der ganze Planet gedreht",
-         "nextTargetHint": "Your next target is at...."
+         "successMessage": "Die blaue Farbe bei Neptun und Uranus kommt von dem Methan in der Atmosphäre der beiden Planeten. Methan verschluckt den roten Anteil des Lichts, so dass der Planet blau erscheint.": "Your next target is at...."
        }
      },
      "Neptun": {
