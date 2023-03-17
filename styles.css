@@ -12,8 +12,10 @@ strong {
 }
 
 .page {
+  height: 100vh;
   overflow: hidden;
   pointer-events: none;
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
