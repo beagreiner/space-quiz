@@ -25,7 +25,7 @@
         <img crossorigin="anonymous" id="saturnmap" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678960574/space-game/saturn_be7cr2.png">
         <img crossorigin="anonymous" id="uranusmap" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678959852/space-game/uranus_iysk5n.png">
         <img crossorigin="anonymous" id="neptunemap" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678959859/space-game/neptune_iv0sbs.png">
-        <img crossorigin="anonymous" id="plutomap" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678959859/space-game/neptune_iv0sbs.png">
+        <img crossorigin="anonymous" id="plutomap" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678960566/space-game/pluto_zn6xef.png">
         <img crossorigin="anonymous" id="saturnRings" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678960572/space-game/saturnRings_sg6hku.png">
 		  <img crossorigin="anonymous" id="uranusRings" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678960579/space-game/uranusRings_mpxgeu.png">
       <img crossorigin="anonymous" id="arrow" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1679001625/space-game/arrow_yzt0k1.png">
@@ -168,8 +168,8 @@
 <a-marker type="barcode" value="9">
 	<a-entity
 		id="neptune"
-		mixin="planetoid spin"
-		scale="3 3 3" 
+		mixin="planetoid"
+		scale="1 1 1" 
 		material="src: #neptunemap"
 		rotation="-85.3 -81.8 81.8"   
 		data-bs-toggle="modal"
@@ -182,7 +182,7 @@
 <a-marker type="barcode" value="10">
 	<a-entity
 		id="pluto"
-		mixin="planetoid spin"
+		mixin="planetoid"
 		scale="1 1 1" 
 		material="src: #plutomap"
 		data-bs-toggle="modal"
@@ -191,7 +191,6 @@
 	>
 	</a-entity>
 </a-marker>
-
           
         <a-entity camera>
           <a-entity cursor="fuse: false; fuseTimeout: 500"
