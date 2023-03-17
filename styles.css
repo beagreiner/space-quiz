@@ -1,0 +1,242 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+strong {
+  font-weight: 500;
+}
+
+.page {
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.screen {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 14;
+  height: 1500px;
+  background: #020024;
+  background: linear-gradient(180deg, #020024 0%, rgba(2, 0, 36, 0.2) 10%, rgba(0, 212, 255, 0.1) 100%);
+  transform: translate(0, calc(-100% + 100vh));
+}
+.is-active .space {
+  z-index: 1;
+  transform: translate(0, 0);
+  transition: transform ease-out 2s;
+}
+
+.screen--stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: url("https://res.cloudinary.com/dq6yyajp4/image/upload/v1678492665/space-game/stars_z6msbk.png") no-repeat;
+  background-size: 100%;
+}
+
+.hud {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  pointer-events: none;
+}
+.hud svg {
+  display: inline-block;
+  width: 100%;
+  height: calc(100% - 1.5rem);
+  fill: #0faffa;
+  margin-top: 1.5rem;
+}
+.hud .points {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  height: 1.5rem;
+  z-index: 50;
+  background: #0faffa;
+  display: flex;
+  justify-content: center;
+}
+.hud .points-text {
+  color: #000;
+  font-weight: bold;
+}
+
+.arrows {
+  z-index: 100;
+  position: absolute;
+  bottom: 200px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+}
+.arrows i {
+  color: #0faffa;
+  font-size: 3rem;
+}
+.arrows i + i {
+  margin-top: -2rem;
+}
+
+.start {
+  z-index: 100;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.btn {
+  pointer-events: all;
+  border-radius: 2px;
+  border: 1px solid #0faffa;
+  background: rgba(0, 0, 0, 0.8);
+  color: #0faffa;
+}
+.btn:hover {
+  border: 1px solid #0faffa;
+  background: black;
+  color: #0faffa;
+}
+.btn i {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-left: 1px solid #0faffa;
+  width: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn.false,
+.btn.true {
+  border: 1px solid #fff;
+}
+.btn.false i,
+.btn.true i {
+  position: absolute;
+  border-color: #fff !important;
+  display: flex;
+  color: #fff;
+  border-left: 1px solid #0faffa;
+}
+.btn.false::before,
+.btn.true::before {
+  border-color: #fff !important;
+}
+
+.btn.true {
+  background: rgba(0, 200, 0, 0.3);
+  color: #fff;
+}
+
+.btn.false {
+  background: rgba(200, 0, 0, 0.3);
+  color: #fff;
+}
+
+.success-message,
+.modal-footer {
+  display: none;
+}
+
+.modal-content.success .success-message,
+.modal-content.success .modal-footer {
+  display: block;
+}
+
+.screen--fireworks {
+  display: none;
+  z-index: 200;
+}
+.screen--fireworks img {
+  display: block;
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+}
+
+.page.is-finished .screen--fireworks {
+  display: block;
+}
+.page.is-finished .btn-reset {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  z-index: 2;
+}
+
+.modal-content {
+  background: rgba(20, 20, 20, 0.8);
+  color: #0faffa;
+  border: 1px solid #0faffa;
+}
+.modal-content .btn-close {
+  color: #0faffa !important;
+  background: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.modal-header {
+  border-bottom: 1px solid #0faffa;
+}
+
+.modal-footer {
+  border-top: 1px solid #0faffa;
+}
+
+.modal-body.questions {
+  counter-reset: answers;
+}
+.modal-body.questions .btn {
+  display: block;
+  width: 100%;
+  position: relative;
+  counter-increment: answers;
+}
+.modal-body.questions .btn::before {
+  content: counter(answers, upper-alpha);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 100%;
+  border-right: 1px solid #0faffa;
+}
+.modal-body.questions .btn + .btn {
+  margin-top: 0.5rem;
+}
