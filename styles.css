@@ -12,9 +12,12 @@ strong {
 }
 
 .page {
-  height: 100vh;
   overflow: hidden;
   pointer-events: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .screen {
