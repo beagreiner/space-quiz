@@ -10,10 +10,10 @@
 </head>
 <body>
 
-<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; trackingMethod: best;'>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.js"></script>
+        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 	  <a-assets timeout="50000">
 		  <a-mixin id="planetoid" geometry="primitive: sphere; radius: 2; segmentsWidth: 24; segmentsHeight: 24" shadow="receive: false"></a-mixin>
         <img crossorigin="anonymous" id="sunmap" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678960594/space-game/sun_wrfsw4.png">
@@ -39,13 +39,13 @@
 	smoothTolerance="0.01"
 	smoothThreshold="5"
 >
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="sun"
 			mixin="planetoid"
 			scale="1 1 1" 
 			material="src: #sunmap"
-			rotation="-85.3 -81.8 81.8"   
+			animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear"    
 			data-bs-toggle="modal"
 			data-bs-target="#planetModal"
 			data-card-id="Sonne"
@@ -61,7 +61,7 @@
   smoothTolerance="0.01"
   smoothThreshold="5"
 >
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="mercury"
 			mixin="planetoid"
@@ -84,7 +84,7 @@
 	smoothTolerance="0.01"
 	smoothThreshold="5"
 >
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="venus"
 			mixin="planetoid"
@@ -107,7 +107,7 @@
 	smoothTolerance="0.01"
 	smoothThreshold="5"
 	>
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="earth"
 			mixin="planetoid"
@@ -130,7 +130,7 @@
   smoothTolerance="0.01"
   smoothThreshold="5"
 >
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="mars"
 			mixin="planetoid"
@@ -153,7 +153,7 @@
   smoothTolerance="0.01"
   smoothThreshold="5"
 >
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="jupiter"
 			mixin="planetoid"
@@ -176,7 +176,7 @@
   	smoothTolerance="0.01"
   	smoothThreshold="5"
 >
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="saturn"
 			mixin="planetoid"
@@ -190,7 +190,7 @@
 			<a-circle
 				src="#saturnRings"
 				radius="50"
-				rotation="-85.3 -81.8 81.8"        
+				rotation="-90 0 0"        
 				scale=".1 .1 .1" 
 				material="transparent: true"
 				data-bs-toggle="modal"
@@ -243,7 +243,7 @@
   	smoothTolerance="0.01"
   	smoothThreshold="5"
 >
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="neptune"
 			mixin="planetoid"
@@ -266,8 +266,7 @@
   	smoothTolerance="0.01"
   	smoothThreshold="5"
 >
->
-	<a-entity rotation="-85.3 -81.8 81.8">
+	<a-entity rotation="-90 0 0">
 		<a-entity
 			id="pluto"
 			mixin="planetoid"
