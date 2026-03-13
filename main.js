@@ -194,47 +194,65 @@ document.querySelector('.start').addEventListener('click', function () {
 });
 document.querySelector('.points-counter').textContent = points;
 
-// open modal with card data
-document.addEventListener('click', function(e){
-  const button = e.target.closest('[data-card-id]');
-  if(button){
-    document.querySelectorAll('.modal-content')[0].classList.remove('success');
-    
-    let cardId = button.dataset.cardId;
-    const cardArrayFiltered = cardsAsArray.filter(([key]) => key.includes(cardId));
-    const cardObject = Object.fromEntries(cardArrayFiltered);
-    card = cardObject[cardId].card;
-    
-    // create answer buttons
-    let answersHtml = '';
-    i = 0;
-    
-    card.answers.forEach(answer => {
-      let answerText = '',
-          answerValue = '',
-          answerIcon = '';
-      i++;
-      
-      for (let [key, value] of Object.entries(answer)) {
-        answerText = key;
-        answerValue = value;
-        if(value === 'true') {answerIcon = 'bi-emoji-smile'} else { answerIcon = 'bi-emoji-frown' };
-      }
-      let answerHtml = '<button type="button" class="btn btn-info" ' + 
-      'data-success-state="' + answerValue +
-      '" data-answer-id="' + cardId + '-' + i +  
-      '" data-answer-group="' + cardId + '">' +
-      answerText +
-      '<i class="' + answerIcon + '"></i></button>';
-      answersHtml  = answersHtml + answerHtml;
-    });
+const markers = document.querySelectorAll('a-marker');
+markers.forEach(marker => {
+  marker.addEventListener('markerFound', () => {
+    console.log('Marker found!', marker);
 
-    document.querySelector('.modal-title').textContent = card.question;
-    document.querySelector('.modal-body.questions').innerHTML = answersHtml;
-    document.querySelector('.modal-body.success-message').textContent = card.successMessage;
-    document.querySelector('.modal-footer').innerHTML = card.nextTargetHint;
-  }
+    const planet = marker.querySelector('[data-card-id]');
+    planet.setAttribute('cursor-listener', '');
+    console.log('planet', planet);
+  });
+
+  marker.addEventListener('markerLost', () => {
+    const planet = marker.querySelector('[data-card-id]');
+    planet.removeAttribute('cursor-listener');
+  });
 });
+
+// open modal with card data
+openModal = function openModal(cardId) {
+  document.querySelectorAll('.modal-content')[0].classList.remove('success');
+
+  const cardArrayFiltered = cardsAsArray.filter(([key]) => key.includes(cardId));
+  const cardObject = Object.fromEntries(cardArrayFiltered);
+  card = cardObject[cardId].card;
+
+  console.log(card);
+  
+  // create answer buttons
+  let answersHtml = '';
+  i = 0;
+  
+  card.answers.forEach(answer => {
+    let answerText = '',
+        answerValue = '',
+        answerIcon = '';
+    i++;
+    
+    for (let [key, value] of Object.entries(answer)) {
+      answerText = key;
+      answerValue = value;
+      if(value === 'true') {answerIcon = 'bi-emoji-smile'} else { answerIcon = 'bi-emoji-frown' };
+    }
+    let answerHtml = '<button type="button" class="btn btn-info" ' + 
+    'data-success-state="' + answerValue +
+    '" data-answer-id="' + cardId + '-' + i +  
+    '" data-answer-group="' + cardId + '">' +
+    answerText +
+    '<i class="' + answerIcon + '"></i></button>';
+    answersHtml  = answersHtml + answerHtml;
+  });
+
+  document.querySelector('.modal-title').textContent = card.question;
+  document.querySelector('.modal-body.questions').innerHTML = answersHtml;
+  document.querySelector('.modal-body.success-message').textContent = card.successMessage;
+  document.querySelector('.modal-footer').innerHTML = card.nextTargetHint;
+
+  const modalEl = document.getElementById('planetModal');
+  const modal = new bootstrap.Modal(modalEl);
+  modal.show();
+}
 
 //answer buttons click handling
 document.addEventListener('click', function(e){
