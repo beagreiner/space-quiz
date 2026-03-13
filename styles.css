@@ -188,7 +188,7 @@ strong {
 }
 
 .screen--directions {
-  display: none;
+  display: none !important;
   padding: 32px;
   &.active {
     display: flex;
