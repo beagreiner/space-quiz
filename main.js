@@ -180,6 +180,8 @@ const cardsAsArray = Object.entries(data.mainTargets);
 
 if(sessionStorage.getItem('finishedTargets')){
   finishedTargets = JSON.parse(sessionStorage.getItem('finishedTargets'));
+} else {
+  document.querySelector('.screen--directions').classList.add('active')
 }
 
 if(sessionStorage.getItem('wrongAnswers')){
@@ -296,6 +298,11 @@ document.addEventListener('click', function(e){
   }
 });
 
+//close directions
+document.querySelector('.screen--directions .btn-close').addEventListener('click', function(){
+  document.querySelector('.screen--directions').classList.remove('active')
+});
+
 //Reset
 document.querySelector('.btn-reset').addEventListener('click', function(e){
   finishedTargets = [];
@@ -305,5 +312,5 @@ document.querySelector('.btn-reset').addEventListener('click', function(e){
   sessionStorage.setItem('wrongAnswers', JSON.stringify([]));
   sessionStorage.setItem('points', 0);
   document.querySelector('.points-counter').textContent = points;
-  document.querySelector('.page').classList.remove('is-active','is-finished');
+  document.querySelector('.page').classList.remove('is-finished');
 });
