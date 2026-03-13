@@ -15,7 +15,7 @@
 		AFRAME.registerComponent('cursor-listener', { 
 			init: function () {
 				this.el.addEventListener('click', e => {
-					openModal(e.target.dataset.cardId);
+					openModal(this.el.dataset.cardId);
 				});
 			}
 		});

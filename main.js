@@ -173,17 +173,17 @@ const data = {
    }
 };
 
-let finishedTargets = [];
-let wrongAnswers = [];
-let points = 0;
+let finishedTargets = JSON.parse(sessionStorage.getItem('finishedTargets')) || [];
+let wrongAnswers = JSON.parse(sessionStorage.getItem('wrongAnswers')) || [];
+let points = parseInt(sessionStorage.getItem('points') || 0);
 const cardsAsArray = Object.entries(data.mainTargets);
 
 if(sessionStorage.getItem('finishedTargets')){
-  finishedTargets = sessionStorage.getItem('finishedTargets');
-  document.querySelector('.page').classList.add('is-active');
+  finishedTargets = JSON.parse(sessionStorage.getItem('finishedTargets'));
 }
+
 if(sessionStorage.getItem('wrongAnswers')){
-  wrongAnswers = sessionStorage.getItem('wrongAnswers');
+  wrongAnswers = JSON.parse(sessionStorage.getItem('wrongAnswers'));
 }
 if(sessionStorage.getItem('points')){
   points += sessionStorage.getItem('points') * 1;
@@ -197,11 +197,13 @@ document.querySelector('.points-counter').textContent = points;
 const markers = document.querySelectorAll('a-marker');
 markers.forEach(marker => {
   marker.addEventListener('markerFound', () => {
-    console.log('Marker found!', marker);
+
+    document.querySelectorAll('[cursor-listener]').forEach(el=>{
+      el.removeAttribute('cursor-listener');
+    });
 
     const planet = marker.querySelector('[data-card-id]');
-    planet.setAttribute('cursor-listener', '');
-    console.log('planet', planet);
+    planet.setAttribute('cursor-listener','');
   });
 
   marker.addEventListener('markerLost', () => {
@@ -211,18 +213,18 @@ markers.forEach(marker => {
 });
 
 // open modal with card data
+const modalEl = document.getElementById('planetModal');
+const modal = new bootstrap.Modal(modalEl);
+
 openModal = function openModal(cardId) {
   document.querySelectorAll('.modal-content')[0].classList.remove('success');
+  document.querySelector('[cursor]').setAttribute('raycaster','enabled:false');
 
-  const cardArrayFiltered = cardsAsArray.filter(([key]) => key.includes(cardId));
-  const cardObject = Object.fromEntries(cardArrayFiltered);
-  card = cardObject[cardId].card;
-
-  console.log(card);
+  const card = data.mainTargets[cardId].card;
   
   // create answer buttons
   let answersHtml = '';
-  i = 0;
+  let i = 0;
   
   card.answers.forEach(answer => {
     let answerText = '',
@@ -249,10 +251,18 @@ openModal = function openModal(cardId) {
   document.querySelector('.modal-body.success-message').textContent = card.successMessage;
   document.querySelector('.modal-footer').innerHTML = card.nextTargetHint;
 
-  const modalEl = document.getElementById('planetModal');
-  const modal = new bootstrap.Modal(modalEl);
   modal.show();
 }
+
+modalEl.addEventListener('hidden.bs.modal', () => {
+  console.log('modal closed');
+
+  // re-enable the cursor / raycaster if you disabled it earlier
+  const cursor = document.querySelector('[cursor]');
+  if (cursor) {
+    cursor.setAttribute('raycaster', 'enabled: true');
+  }
+});
 
 //answer buttons click handling
 document.addEventListener('click', function(e){
@@ -267,7 +277,7 @@ document.addEventListener('click', function(e){
       //store successfully finishedTargets
       if(!finishedTargets.includes(target.dataset.answerGroup)){
         finishedTargets.push(target.dataset.answerGroup);
-        sessionStorage.setItem('finishedTargets', finishedTargets);
+        sessionStorage.setItem('finishedTargets', JSON.stringify(finishedTargets));
         points += 20;
 
         if(finishedTargets.length === cardsAsArray.length){
@@ -277,7 +287,7 @@ document.addEventListener('click', function(e){
     } else {
       if(!wrongAnswers.includes(target.dataset.answerId)){
         wrongAnswers.push(target.dataset.answerId);
-        sessionStorage.setItem('wrongAnswers', wrongAnswers);
+        sessionStorage.setItem('wrongAnswers', JSON.stringify(wrongAnswers));
         points -= 5;
       }
     }
@@ -291,8 +301,8 @@ document.querySelector('.btn-reset').addEventListener('click', function(e){
   finishedTargets = [];
   wrongAnswers = [];
   points = 0;
-  sessionStorage.setItem('finishedTargets', []);
-  sessionStorage.setItem('wrongAnswers', []);
+  sessionStorage.setItem('finishedTargets', JSON.stringify([]));
+  sessionStorage.setItem('wrongAnswers', JSON.stringify([]));
   sessionStorage.setItem('points', 0);
   document.querySelector('.points-counter').textContent = points;
   document.querySelector('.page').classList.remove('is-active','is-finished');
