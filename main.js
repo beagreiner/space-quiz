@@ -1,134 +1,176 @@
 const data = {
-  "mainTargets": {
-    "Merkur": {
-      "card": {
-        "question": "Is Mercury hot or cold?",
-        "answers": [{
-          "Cold": "false"
-        },
-        {
-          "Hot": "false"
-        },
-        {
-          "Hot on one side and cold on the other": "true"
-        }],
-        "successMessage": "Mercury rotates very slowly. The side facing the Sun becomes extremely hot, while the other side becomes extremely cold.",
-        "nextTargetHint": "Your next clue is at the bakery"
-      }
-    },
-    "Venus": {
-      "card": {
-        "question": "What did sailors in the past call Venus?",
-        "answers": [{
-          "Morning Star": "false"
-        },
-        {
-          "Evening Star": "false"
-        },
-        {
-          "Both": "true"
-        }],
-        "successMessage": "Depending on the season, Venus can be seen very brightly from Earth either in the morning or in the evening. Sailors long ago did not realize it was the same celestial object.",
-        "nextTargetHint": "Take a look at the advertisement column at the other side of the plaza. The next clue is there."
-      }
-    },
-    "Erde": {
-      "card": {
-        "question": "Is Earth the only planet in our solar system that has a moon?",
-        "answers": [{
-          "Only Mercury and Venus have none": "true"
-        },
-        {
-          "Only Earth, Jupiter and Saturn have moons": "false"
-        },
-        {
-          "Only Earth has a moon": "false"
-        }],
-        "successMessage": "Earth has one moon, Mars has two, and Jupiter and Saturn each have more than sixty! Only Mercury and Venus have no moons — all the other planets have at least one.",
-        "nextTargetHint": "Look for a house with a large fish pond to find the next clue."
-      }
-    },
-    "Mars": {
-      "card": {
-        "question": "What is the highest mountain on Mars called?",
-        "answers": [{
-          "Olympus Mons": "true"
-        },
-        {
-          "Mount Everest": "false"
-        },
-        {
-          "Mount Mars": "false"
-        }],
-        "successMessage": "Olympus Mons is the highest mountain on Mars. It is about two and a half times taller than Mount Everest.",
-        "nextTargetHint": "Find a garden with many garden gnomes. The next clue is there."
-      }
-    },
-    "Jupiter": {
-      "card": {
-        "question": "What is the Great Red Spot on Jupiter?",
-        "answers": [{
-          "A volcano": "false"
-        },
-        {
-          "A giant storm": "true"
-        },
-        {
-          "A huge mountain range": "false"
-        }],
-        "successMessage": "The Great Red Spot is a massive storm on Jupiter that has been raging for at least 350 years.",
-        "nextTargetHint": "Your next clue is at the church"
-      }
-    },
-    "Saturn": {
-      "card": {
-        "question": "What are Saturn’s rings made of?",
-        "answers": [{
-          "Gas": "false"
-        },
-        {
-          "Precious metals": "false"
-        },
-        {
-          "Ice and rock particles": "true"
-        }],
-        "successMessage": "Saturn’s rings consist of countless small particles of ice and rock that are held in orbit around the planet by gravity.",
-        "nextTargetHint": "Find the largest oak tree behind the church. Your next clue is there."
-      }
-    },
-    "Uranus": {
-      "card": {
-        "question": "Why does Uranus look turquoise?",
-        "answers": [{
-          "Its surface is made of water": "false"
-        },
-        {
-          "Because of methane gas in its atmosphere": "true"
-        },
-        {
-          "Because moss grows on its rocks": "false"
-        }],
-        "successMessage": "The blue color of Neptune and Uranus comes from methane in their atmospheres. Methane absorbs the red part of sunlight, which makes the planets appear blue.",
-        "nextTargetHint": "Your next clue is at the playground"
-      }
-    },
-    "Neptun": {
-      "card": {
-        "question": "Who is Neptune named after?",
-        "answers": [{
-          "The Roman god of the sea": "true"
-        },
-        {
-          "The Greek god of war": "false"
-        },
-        {
-          "The Egyptian god of weather": "false"
-        }],
-        "successMessage": "It is named after the Roman god of the sea. Neptune belongs to the group of ice giants. Its core is surrounded by a mantle or ocean made of rock, water, ammonia, and methane.",
-        "nextTargetHint": "Well done! Search around the playground, the treasure is hidden here somewhere"
-      }
-    }
-  }
+   "mainTargets": {
+     "Sonne": {
+       "card": {
+         "question": "Was genau passiert bei einer Sonnenfinsternis?",
+         "answers": [{
+           "Der Mond schiebt sich zwischen die Erde und die Sonne": "true"
+           },
+           {
+           "Die Sonne verdunkelt sich": "false"
+           },
+           {
+           "Die Erde dreht sich weg von der Sonne": "false"
+           }
+         ],
+         "successMessage": "Richtig!",
+         "nextTargetHint": "Geht bei auf der Gans nach rechts weiter bis zum Ende. Dort findet ihr den nächsten Hinweis"
+       }
+     },
+     "Merkur": {
+       "card": {
+         "question": "Ist es auf dem Merkur heiß oder kalt?",
+         "answers": [{
+           "Kalt": "false"
+           },
+           {
+           "Heiß": "false"
+           },
+           {
+           "Auf der einen Seite heiß, auf der anderen kalt": "true"
+           }
+         ],
+         "successMessage": "Merkur dreht sich nur sehr langsam um sich selbst, die Seite die zur Sonne zeigt ist extrem heiß, die andere extrem kalt",
+         "nextTargetHint": "Geht bei auf der Gans nach rechts weiter bis zum Ende. Dort findet ihr den nächsten Hinweis"
+       }
+     },
+     "Venus": {
+       "card": {
+         "question": "Wie wurde Venus früher von Seefahrern genannt?",
+         "answers": [{
+           "Morgenstern": "false"
+           },
+           {
+           "Abenstern": "false"
+           },
+           {
+           "Beides": "true"
+           }
+         ],
+         "successMessage": "Je nach Jahreszeit ist Venus von der Erde aus morgens oder abends sehr hell sichtbar. Seefahrer früher wußten nicht, dass es der gleiche Himmelskörper ist.",
+         "nextTargetHint": "Geht nach rechts auf den Akeleiweg. Dort ist der nächste Hinweis"
+       }
+     },
+     "Erde": {
+       "card": {
+         "question": "Ist die Erde der einzige Planet in unserem Sonnensystem, der einen Mond hat?",
+         "answers": [{
+           "Nur Merkur und Venus haben keinen": "true"
+           },
+           {
+           "Nur Erde, Jupiter und Saturn haben Monde": "false"
+           },
+           {
+           "Nur die Erde hat einen": "false"
+           }
+         ],
+         "successMessage": "Die Erde hat einen, der Mars zwei, Jupiter und Saturn sogar je über sechzig! Nur Merkur und Venus müssen ohne Monde auskommen, alle anderen Planeten haben mindestens einen Mond.",
+         "nextTargetHint": "Geht nach links auf den Fuchsienweg und findet den nächsten Hinweis"
+       }
+     },
+     "Mars": {
+       "card": {
+         "question": "Wie heißt der höchste Berg auf dem Mars?",
+         "answers": [{
+           "Olympus Mons": "true"
+            },
+            {
+            "Mount Everest": "false"
+            },
+            {
+            "Mount Mars": "false"
+            }
+         ],
+         "successMessage": "Olympus Mons ist der höchste Berg auf dem Mars. Er ist ungefähr zweieinhalb Mal so groß wie der Mount Everest",
+         "nextTargetHint": "Geht weiter auf dem Fuchsienweg bis ihr an den Rosmarinweg kommt. Dort kommt der nächste Hinweis"
+       }
+     },
+     "Jupiter": {
+       "card": {
+         "question": "What is the Great Red Spot on Jupiter?",
+         "answers": [{
+           "A volcano": "false"
+            },
+            {
+            "A giant storm": "true"
+            },
+            {
+            "A huge mountain range": "false"
+            }
+         ],
+         "successMessage": "The Great Red Spot is a massive storm on Jupiter that has been raging for at least 350 years.",
+         "nextTargetHint": "Your next clue is at the church"
+       }
+     },
+     "Saturn": {
+       "card": {
+         "question": "Woraus bestehen die Saturnringe?",
+         "answers": [{
+           "Aus Gas": "false"
+           },
+           {
+           "Aus Edelmetallen": "false"
+           },
+           {
+           "Aus Eis- und Gesteinspartikeln": "true"
+           }
+         ],
+         "successMessage": "Die Ringe des Saturn bestehen aus unzähligen kleinen Eis- und Gesteinspartikeln, die durch die Schwerkraft in eine Umlaufbahn um den Planeten gezogen wurden.",
+         "nextTargetHint": "Geht den Weg bis zum Ende. An der Ecke zu In den Ringelgärten kommt der nächste Hinweis"
+       }
+     },
+     "Uranus": {
+       "card": {
+         "question": "Warum sieht Uranus türkis aus?",
+         "answers": [{
+           "Seine Oberfläche besteht aus Wasser": "false"
+           },
+           {
+           "Wegen dem Methangas in der Atmosphäre": "true"
+           },
+           {
+           "Auf seinen Felsen wächst Moos": "false"
+           }
+         ],
+         "successMessage": "Die blaue Farbe bei Neptun und Uranus kommt von dem Methan in der Atmosphäre der beiden Planeten. Methan verschluckt den roten Anteil des Lichts, so dass der Planet blau erscheint.",
+         "nextTargetHint": "Biegt nach rechts ab. der nächste Hinweis kommt am Begonienweg"
+       }
+     },
+     "Neptun": {
+       "card": {
+         "question": "Nach wem ist Neptun benannt?",
+         "answers": [{
+           "Dem römischen Gott des Meeres": "true"
+           },
+           {
+           "Dem griechischen Gott des Krieges": "false"
+           },
+           {
+           "Dem ägyptischen Gott des Wetters": "false"
+           }
+         ],
+         "successMessage": "Er ist nach dem römischen Gott des Meeres benannt. Neptun gehört zu Gruppe der Eisriesen. Sein Kern ist umgeben von einem Mantel oder Ozean aus einer Mischung von Fels, Wasser, Ammoniak und Methan",
+         "nextTargetHint": "Geht nach rechts auf den Begonienweg. Der nächste Hinweis kommt am Krokusweg"
+       }
+     },
+     "Pluto": {
+       "card": {
+         "question": "Ist Pluto ein Planet?",
+         "answers": [{
+           "Ja": "false"
+           },
+           {
+           "Nein": "false"
+           },
+           {
+           "Er war früher einer": "true"
+           }
+         ],
+         "successMessage": "Pluto zählte bis 2006 zu den Planeten unseres Sonnensystems. Seither zählt er zu den neu entdeckten (und ähnlich kleinen) Zwergplaneten, und unser Sonnensystem hat nur noch 8 Planeten. Ansonsten müssten wir uns inzwischen schon über 12 Planeten merken",
+         "nextTargetHint": "Geschafft! Ihr habt alle Fragen beantwortet. Der Schatz ist am Spielplatz am Krokusweg versteckt"
+       }
+     },
+   }
 };
 
 let finishedTargets = JSON.parse(sessionStorage.getItem('finishedTargets')) || [];
