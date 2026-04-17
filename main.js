@@ -70,7 +70,7 @@ const data = {
      },
      "Mars": {
        "card": {
-         "question": "Wie heißt der höchste Berg auf dem Mars?",
+         "question": "What is the highest mountain on Mars called?",
          "answers": [{
            "Olympus Mons": "true"
             },
@@ -81,8 +81,8 @@ const data = {
             "Mount Mars": "false"
             }
          ],
-         "successMessage": "Olympus Mons ist der höchste Berg auf dem Mars. Er ist ungefähr zweieinhalb Mal so groß wie der Mount Everest",
-         "nextTargetHint": "Geht weiter auf dem Fuchsienweg bis ihr an den Rosmarinweg kommt. Dort kommt der nächste Hinweis"
+         "successMessage": "Olympus Mons is the highest mountain on Mars. It is about two and a half times taller than Mount Everest.",
+         "nextTargetHint": "Find a garden with many garden gnomes. The next clue is there."
        }
      },
      "Jupiter": {
