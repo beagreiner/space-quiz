@@ -25,7 +25,7 @@
 <body>
 
 
-        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer="precision: mediump">
+        <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;" renderer="precision: mediump">
 	  <a-assets timeout="50000">
 		  <a-mixin id="planetoid" geometry="primitive: sphere; radius: 2; segmentsWidth: 24; segmentsHeight: 24" shadow="receive: false"></a-mixin>
         <img crossorigin="anonymous" id="sunmap" src="https://res.cloudinary.com/dq6yyajp4/image/upload/v1678960594/space-game/sun_wrfsw4.png">
